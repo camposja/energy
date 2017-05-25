@@ -1,3 +1,48 @@
+<section id="blog" class="section-padding wow fadeInUp delay-05s">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="service-title pad-bt15">Cities commited to 100</h2>
+        <p class="sub-title pad-bt15">Catalogue of U.S. cities+ commited to 100% renewable energy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
+        <hr class="bottom-line">
+      </div>
+
+
+
+
+      <%- @cities.each do |city| %>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="blog-sec">
+          <div class="blog-img">
+            <a href="">
+              <img src="img/blog01.jpg" class="img-responsive">
+            </a>
+          </div>
+          <div class="blog-info">
+            <h2><%= city.city_name %>, <%= city.state %></h2>
+            <div class="blog-comment">
+                <p>Population: <span><%= city.population %></span></p>
+                <p>
+                  <span><a href="#"><i class="fa fa-heart"></i></a> 15</span>
+                  <span><a href="#"><i class="fa fa-facebook"></i></a> 11</span></p>
+            </div>
+            <p>Aspen has been a city with renewable energy since 2012. The total CO2 emmissions saved in Aspen every year are 254,000 cubic tons. </p>
+            <a href="" class="read-more">Read more →</a>
+            <%= link_to city do %>
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+
+    </div>
+  </div>
+</section>
+
+
 <div class="page-header">
   <%= link_to new_city_path, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>

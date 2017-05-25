@@ -3,6 +3,5 @@ class PagesController < ApplicationController
   end
 
   def theme
-    render 'theme', layout: false
   end
 end
