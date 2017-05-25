@@ -14,24 +14,20 @@
         <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="blog-sec">
           <div class="blog-img">
-            <a href="">
-              <img src="img/blog01.jpg" class="img-responsive">
-            </a>
+            <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
           </div>
           <div class="blog-info">
             <h2><%= city.city_name %>, <%= city.state %></h2>
             <div class="blog-comment">
-                <p>Population: <span><%= city.population %></span></p>
-                <p>
+                <p class="pull-right">
                   <span><a href="#"><i class="fa fa-heart"></i></a> 15</span>
-                  <span><a href="#"><i class="fa fa-facebook"></i></a> 11</span></p>
+                  <span><a href="#"><i class="fa fa-facebook"></i></a> 11</span>
+                </p>
+                <p>Population: <span><%= city.population %></span></p>
             </div>
             <p>Aspen has been a city with renewable energy since 2012. The total CO2 emmissions saved in Aspen every year are 254,000 cubic tons. </p>
-            <a href="" class="read-more">Read more →</a>
-            <%= link_to city do %>
-              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-            <% end %>
-
+            <!-- <a href="" class="read-more">Read more →</a> -->
+            <%= link_to "Read More →", city, class: "read-more" %>
           </div>
         </div>
       </div>
