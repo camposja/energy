@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/homepage'
+  get 'pages/theme'
 
   resources :cities
 

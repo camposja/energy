@@ -14,3 +14,7 @@
 //= require jquery_ujs
 
 //= require 'cable'
+//= require 'theme/jquery.easing.min'
+//= require 'theme/wow'
+//= require 'theme/jquery.bxslider.min'
+//= require 'theme/custom'
