@@ -38,9 +38,30 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to "Home", "#" %></li>
         </ul>
+
+
+        <% if logged_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="navbar-text">| Logged in: <%= current_user.name %> |</p>
+            </li>
+            <li>
+              <p class="navbar-text"><%= link_to "| Logout |", logout_path %></p>
+            </li>
+          </ul>
+          <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="navbar-text"><%= link_to "| Log in |", auth_path(provider: "GitHub") %></p>
+            </li>
+          </ul>
+          <% end %>
+
       </div>
     </div>
   </nav>
+
+
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>

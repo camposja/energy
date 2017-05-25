@@ -1,4 +1,6 @@
 class CitiesController < ApplicationController
+  before_action :authenticate!, except: [:index]
+
   # GET /cities
   def index
     @cities = City.all
