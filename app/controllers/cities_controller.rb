@@ -51,6 +51,6 @@ class CitiesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def city_params
-    params.require(:city).permit(:city_name, :state, :us_city, :population, :one_hundred_pct_by, :co2_emissions_perannum, :wind, :solar, :other_energy_source, :image_data)
+    params.require(:city).permit(:city_name, :state, :us_city, :population, :one_hundred_pct_by, :co2_emissions_perannum, :wind, :solar, :other_energy_source, :image)
   end
 end
