@@ -281,7 +281,11 @@
     <h2 class="service-title pad-bt15">How would <input type="text" class="form-control input-sm your-town" name="subject" id="subject" placeholder="your town" data-rule="minlen:3" data-msg="Please enter valid city name" /> look like as a 100% committed city?</h2>
     <p class="sub-title pad-bt15">Type the name of your town, then press the button below to find out more</p>
 
-    <a href="#" class="btn btn-download">Find out</a>
+    <%= link_to new_city_path, class: 'btn btn-download' do %>
+      <span class="fa fa-tasks"> </span>
+      Find out
+    <% end %>
+
     <hr class="bottom-line">
   </div>
   <div class="col-md-3 col-sm-6 col-xs-12">

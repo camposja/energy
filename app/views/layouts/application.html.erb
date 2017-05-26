@@ -44,6 +44,23 @@
               <li class=""><a href="#committed">Cities committed to 100%</a></li>
               <li class=""><a href="#mytown">Renewable in my Town</a></li>
 
+
+              <% if logged_in? %>
+                  <li>
+                    <p class="navbar-text">Logged in: <%= current_user.name %></p>
+                  </li>
+                  <li>
+                    <p class="navbar-text"><%= link_to "Logout", logout_path %></p>
+                  </li>
+                </ul>
+                <% else %>
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <p class="navbar-text"><%= link_to "Log in", auth_path(provider: "GitHub") %></p>
+                  </li>
+                </ul>
+              <% end %>
+
             </ul>
           </div>
         </div>
