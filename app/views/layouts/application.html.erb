@@ -46,19 +46,14 @@
 
 
               <% if logged_in? %>
-                  <li>
-                    <p class="navbar-text">Logged in: <%= current_user.name %></p>
-                  </li>
-                  <li>
-                    <p class="navbar-text"><%= link_to "Logout", logout_path %></p>
-                  </li>
-                </ul>
+
+                  <li class="active"><a href="">Logged in: <%= current_user.name %></a></li>
+                  <li class="active"><%= link_to "Logout", logout_path %></li>
+
                 <% else %>
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <p class="navbar-text"><%= link_to "Log in", auth_path(provider: "GitHub") %></p>
-                  </li>
-                </ul>
+
+                  <li class="active"><%= link_to "Log in", auth_path(provider: "GitHub") %></li>
+
               <% end %>
 
             </ul>
