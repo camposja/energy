@@ -1,0 +1,24 @@
+.j-header{
+    background: url('../img/bg-banner02.jpg') no-repeat fixed;
+    background-size: cover;
+    min-height: 650px;
+    position: relative;
+}
+.j-bg-color
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 650px;
+}
+#j-main-header
+{
+}
+.j-navbar-default {
+    background-color: transparent;
+    border:0px;
+    padding: 20px 0;
+    transition: all 0.3s;
+}
+.j-navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover
+{
+    color: #002F2F;
+}
