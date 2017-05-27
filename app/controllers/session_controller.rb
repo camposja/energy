@@ -19,4 +19,12 @@ class SessionController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+
+  def souvenir_email
+  cities = City.all
+  user = current_user
+
+  NotificationsMailer.your_town(cities, user).deliver_later
+  redirect_to cities_path
+  end
 end
