@@ -68,6 +68,9 @@ gem 'roda'
 gem "image_processing"
 gem "mini_magick", ">= 4.3.5"
 
+# Facebook sharing
+gem 'social-share-button', '~> 0.10.0'
+
 group :development do
   gem 'awesome_print'
   gem 'dotenv-rails'

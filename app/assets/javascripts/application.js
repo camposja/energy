@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require 'favorites'
 //= require bootstrap
+//= require social-share-button
 
 //= require 'cable'
 //= require 'theme/jquery.easing.min'
