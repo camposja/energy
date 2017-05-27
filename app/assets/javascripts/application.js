@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require 'favorites'
 
 //= require 'cable'
 //= require 'theme/jquery.easing.min'

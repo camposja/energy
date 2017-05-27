@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :favorites, dependent: :destroy
+  has_many :cities, through: :favorites
+
   def self.from_omniauth(authentication_data)
   user = User.where(provider: authentication_data['provider'],
                     uid: authentication_data['uid']).first_or_create
