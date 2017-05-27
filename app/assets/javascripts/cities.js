@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: "POST",
-      url: 'favorites/' + cityId
+      url: '/favorites/' + cityId
     })
   })
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: "DELETE",
-      url: 'favorites/destroy/' + cityId
+      url: '/favorites/destroy/' + cityId
     })
   })
 
