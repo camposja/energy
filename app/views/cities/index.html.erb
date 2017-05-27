@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h2 class="service-title pad-bt15">Cities commited to 100</h2>
-        <p class="sub-title pad-bt15">Catalogue of U.S. cities+ commited to 100% renewable energy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="sub-title pad-bt15">See below our Catalogue of U.S. cities+ commited to 100% Renewable Energy.</p>
         <hr class="bottom-line">
       </div>
 
@@ -31,9 +31,9 @@
 
                   <span><a href="#"><i class="fa fa-facebook"></i></a> 11</span>
                 </p>
-                <p>Population: <span><%= city.population %></span></p>
+                <p>100% Renewable by: <span><%= city.one_hundred_pct_by %></span></p>
             </div>
-            <p>Aspen has been a city with renewable energy since 2012. The total CO2 emmissions saved in Aspen every year are 254,000 cubic tons. </p>
+            <p><%= city.city_name %>, <%= city.state %> has a population of <%= city.population %>. <%= city.city_name %> has current CO2 emissions of <%= city.co2_emissions_perannum %> cubic tons per year. The city has set a goal to use 100% Renewable Energy by the year <%= city.one_hundred_pct_by %>.</p>
             <!-- <a href="" class="read-more">Read more →</a> -->
             <%= link_to "Read More →", city, class: "read-more" %>
           </div>
