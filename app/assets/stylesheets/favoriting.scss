@@ -1,10 +1,16 @@
+.blog-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .fav-heart {
-  font-size: 26px;
+  font-size: 18px;
   padding-left: 10px;
 }
 
 faved-heart {
-  font-size: 26px;
+  font-size: 18px;
   padding-left: 10px;
   color: red;
 }

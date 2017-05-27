@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post   'favorites/:cityId'         => 'favorites#create'
   delete 'favorites/destroy/:cityId' => 'favorites#destroy'
 
+  #Mailer route
+  get '/town_email' => 'session#souvenir_email'
+
   mount Shrine::DownloadEndpoint => "/attachments"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

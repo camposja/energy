@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+</head>
+
+<div class="container">
+
 <h1>Renewable Energy</h1>
 
 <p>
@@ -8,33 +19,22 @@
 <h1>Image your city commited to 100% Renewable Energy</h1>
 
 
-<%- @cities.each do |city| %>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="blog-sec">
-    <div class="blog-img">
-      <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
-    </div>
-    <div class="blog-info">
-      <h2><%= city.city_name %>, <%= city.state %></h2>
-      <div class="blog-comment">
-          <p class="pull-right">
-            <span>
-            <% if logged_in? && favorited(city.id) == true %>
-              <p class="pull-left faved-heart" data-remote=true data-type=script data-cityid="<%= city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></p>
-            <% elsif logged_in? && favorited(city.id) == false %>
-              <p class="pull-left fav-heart" data-remote=true data-type=script data-cityid="<%= city.id %>"> <i class="fa fa-heart" aria-hidden=“true”></i></p>
-            <% end %>
-            </span>
 
 
-            <span><a href="#"><i class="fa fa-facebook"></i></a> 11</span>
-          </p>
-          <p>100% Renewable by: <span><%= city.one_hundred_pct_by %></span></p>
-      </div>
-      <p><%= city.city_name %>, <%= city.state %> has a population of <%= city.population %>. <%= city.city_name %> has current CO2 emissions of <%= city.co2_emissions_perannum %> cubic tons per year. The city has set a goal to use 100% Renewable Energy by the year <%= city.one_hundred_pct_by %>.</p>
-      <!-- <a href="" class="read-more">Read more →</a> -->
-      <%= link_to "Read More →", city, class: "read-more" %>
-    </div>
-  </div>
+<dt>City name:</dt>
+<dd><%= @city.city_name %></dd>
+
+<dt>State:</dt>
+<dd><%= @city.state %></dd>
+
+<dt>Population:</dt>
+<dd><%= @city.population %></dd>
+
+<dt>One hundred pct by:</dt>
+<dd><%= @city.one_hundred_pct_by %></dd>
+
+<dt>Image:</dt>
+<dd><%= image_tag(@city.image_url(:medium)) %></dd>
+
 </div>
-<% end %>
+</html>

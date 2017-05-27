@@ -21,10 +21,10 @@ class SessionController < ApplicationController
   end
 
   def souvenir_email
-  cities = City.all
-  user = current_user
+    city = @city
+    user = current_user
 
-  NotificationsMailer.your_town(cities, user).deliver_later
-  redirect_to cities_path
+    NotificationsMailer.your_town(city, user).deliver_later
+    redirect_to cities_path
   end
 end

@@ -1,7 +1,8 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(document).ready(function(){
+// $(document).ready(function(){
+$(document).on('turbolinks:load', function() {
 
   // Favoriting
   $('.j-body2').on('click', '.fav-heart', function(event) {
@@ -19,7 +20,7 @@ $(document).ready(function(){
 
   // Unfavoriting
   $('.j-body2').on('click', '.faved-heart', function(event) {
-    console.log("you clikced this")
+    console.log("you clicked this")
     let cityId = $(this).data("cityid")
     $(this).removeClass('faved-heart')
     $(this).addClass('fav-heart')

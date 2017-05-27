@@ -6,8 +6,11 @@ class NotificationsMailer < ApplicationMailer
   #
   #   en.notifications_mailer.your_town.subject
   #
-  def your_town(energy_enthusiast)
-    mail to: energy_enthusiast.email,
+  def your_town(city, user)
+    @user = user
+    @city = city
+
+    mail to: @user.email,
          subject: "100% Renewable Energy Cities → Your Town"
   end
 end
