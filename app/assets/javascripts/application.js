@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require social-share-button
 
+//= require 'cities'
 //= require 'cable'
 //= require 'theme/jquery.easing.min'
 //= require 'theme/wow'
