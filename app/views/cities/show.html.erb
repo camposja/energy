@@ -21,7 +21,6 @@
   <% end %>
   </dd>
 
-
   <dt>City name:</dt>
   <dd><%= @city.city_name %></dd>
 
@@ -48,6 +47,17 @@
 
   <dt>Other energy source:</dt>
   <dd><%= @city.other_energy_source %></dd>
+
+  <dt>Souvenir Email:</dt>
+  <dd>
+    <div class="page-header">
+      <%= link_to town_email_path, class: 'btn btn-primary pull-left' do %>
+      <span class="glyphicon glyphicon-leaf"></span>
+        My Town Email
+    <% end %>
+  </dd>
+
+  <dt><dd>    .</dd></dt>
 
   <dt>Image:</dt>
   <dd><%= image_tag(@city.image_url(:medium)) %></dd>
