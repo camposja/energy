@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   post '/login'  => 'session#create'
   get  '/logout' => 'session#destroy'
 
-  post   'favorites/:cityId'         => 'favorites#create'
-  delete 'favorites/destroy/:cityId' => 'favorites#destroy'
+  post   '/favorites/:cityId'         => 'favorites#create'
+  delete '/favorites/destroy/:cityId' => 'favorites#destroy'
 
   #Mailer route
   get '/town_email' => 'session#souvenir_email'
