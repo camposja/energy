@@ -32,7 +32,12 @@
       <% end %>
   </div>
 
-    <%= image_tag(@city.image_url(:medium)) %>
+  <% if @city.image.present? %>
+    <%= image_tag(@city.image_url(:medium), class: "img-responsive") %>
+  <% else %>
+    <% image_tag('male.png') %>
+  <% end %>
+
 
   </div>
   <div class="col-md-6 col-sm-12">

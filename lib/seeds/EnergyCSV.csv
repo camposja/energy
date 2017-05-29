@@ -1,0 +1,38 @@
+city_name,state,us_city,population,one_hundred_pct_by,co2_emissions_perannum,wind,solar,other_energy_source
+San Diego ,CA,yes," 	1,370,000 ",2035,29583,10,10,80
+Rochester,MN,yes," 	100,000 ",2031,,20,20,
+San Francisco,CA,yes," 	864,000 ",2030,25438,40,40,20
+San Jose,CA,yes," 	960,000 ",2022,,25,25,50
+Gran Rapids ,MI ,yes," 	192,000 ",2020,37475,30,30,40
+East Hampton ,NY,yes," 	21,500 ",2020,25364,25,25,50
+Georgetown,TX,yes," 	54,898 ",2017,,,,100
+Aspen,CO,yes," 	6,658 ",2015,472485,50,50,45
+Burlington ,VT,yes," 	42,282 ",2014,,30,30,40
+Greensburg ,KS,yes, 	785 ,2013,245475,25,25,50
+St Petersburg ,FL,yes," 	253,693 ",2030,245475,25,25,50
+Abita Springs,LA,yes," 	2,479 ",2030,,30,30,40
+Atlanta,GA,yes," 	456,002 ",2035,,,,100
+Boulder ,CO,yes," 	105,112 ",2030,25438,,,100
+Del Mar,CA,yes," 	4,311 ",2035,245475,25,25,50
+Madison,WI,yes," 	245,691 ",2030,37475,,,100
+Moab,UT,yes," 	5,140 ",2032,,,,100
+Nassau,NY,yes," 	4,789 ",2020,,30,30,40
+Palo Alto ,CA,yes," 	66,955 ",2013,245475,,,100
+Park City,UT,yes," 	8,058 ",2032,37475,30,30,40
+Pueblo,CO,yes," 	108,423 ",2035,,,,100
+Salt Lake City,UT,yes," 	190,884 ",2032,25438,30,30,40
+South Lake Tahoe,CA,yes," 	21,529 ",2032,,,,100
+Southhampton,NY,yes," 	56,790 ",2025,37475,,,100
+Taos ,NM,yes," 	5,766 ",2030,245475,25,25,50
+Tampa,FL,yes,764000,2040,25438,,,100
+,Norway,no," 	5,140,000 ",2014,,,,100
+,Costa Rica,no," 	5,000,000 ",2012,25438,30,30,40
+,Paraguay,no," 	7,010,000 ",2015,,25,25,50
+,Uruguay,no," 	3,300,000 ",2014,25438,,,100
+,Iceland,no," 	329,100 ",2014,245475,15,15,70
+,"Quebec, CA",no," 	8,200,000 ",2010,37475,30,30,40
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,

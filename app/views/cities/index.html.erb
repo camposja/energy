@@ -44,7 +44,13 @@
         <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="blog-sec">
           <div class="blog-img">
-            <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
+
+            <% if city.image.present? %>
+              <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
+            <% else %>
+              <% image_tag('male.png') %>
+            <% end %>
+
           </div>
           <div class="blog-info">
             <h2><%= city.city_name %>, <%= city.state %></h2>
