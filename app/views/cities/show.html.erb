@@ -1,65 +1,48 @@
 <div class="page-header">
-  <%= link_to cities_path, class: 'btn btn-default' do %>
+  <%= link_to cities_path, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <%= link_to edit_city_path(@city), class: 'btn btn-primary' do %>
+  <%= link_to edit_city_path(@city), class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show city</h1>
+  <%= link_to town_email_path, class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-leaf"></span>
+    My Town Email
+<% end %>
+  <h1>
+    <%= @city.city_name %>, <%= @city.state %>
+  </h1>
+</div>
+<div>
+  <h2>100% Renewable by: <%= @city.one_hundred_pct_by %></h2>
 </div>
 
-<dl class="dl-horizontal">
 
-  <dt>Favorite:</dt>
-  <dd>
-  <% if logged_in? && favorited(@city.id) == true %>
-    <p class="pull-left faved-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fav-heart" aria-hidden=“true”></i></p>
-  <% elsif logged_in? && favorited(@city.id) == false %>
-    <p class="pull-left fav-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></p>
-  <% end %>
-  </dd>
 
-  <dt>City name:</dt>
-  <dd><%= @city.city_name %></dd>
-
-  <dt>State:</dt>
-  <dd><%= @city.state %></dd>
-
-  <dt>Us city:</dt>
-  <dd><%= @city.us_city %></dd>
-
-  <dt>Population:</dt>
-  <dd><%= @city.population %></dd>
-
-  <dt>One hundred pct by:</dt>
-  <dd><%= @city.one_hundred_pct_by %></dd>
-
-  <dt>Co2 emissions perannum:</dt>
-  <dd><%= @city.co2_emissions_perannum %></dd>
-
-  <dt>Wind:</dt>
-  <dd><%= @city.wind %></dd>
-
-  <dt>Solar:</dt>
-  <dd><%= @city.solar %></dd>
-
-  <dt>Other energy source:</dt>
-  <dd><%= @city.other_energy_source %></dd>
-
-  <dt>Souvenir Email:</dt>
-  <dd>
-    <div class="page-header">
-      <%= link_to town_email_path, class: 'btn btn-primary pull-left' do %>
-      <span class="glyphicon glyphicon-leaf"></span>
-        My Town Email
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <div>
+    <% if logged_in? && favorited(@city.id) == true %>
+      <p class="pull-left faved-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fav-heart" aria-hidden=“true”></i></p>
+    <% elsif logged_in? && favorited(@city.id) == false %>
+      <p class="pull-left fav-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></p>
     <% end %>
-  </dd>
+  </div>
+    <%= image_tag(@city.image_url(:medium)) %>
 
-  <dt><dd>    .</dd></dt>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <dl class="dl-horizontal">
 
-  <dt>Image:</dt>
-  <dd><%= image_tag(@city.image_url(:medium)) %></dd>
+      <h3>Polulation: <%= number_with_delimiter(@city.population, delimiter: ',') %></h3>
+      <h3>Co2 emissions perannum: <%= number_with_delimiter(@city.co2_emissions_perannum, delimiter: ',') %></h3>
+      <h3>Percentage of Wind projected: <%= number_to_percentage(@city.wind, precision: 0) %></h3>
+      <h3>Percentage of Solar projected: <%= number_to_percentage(@city.solar, precision: 0) %></h3>
+      <h3>Percentage of other Renewables: <%= number_to_percentage(@city.other_energy_source, precision: 0) %></h3>
 
-</dl>
+
+  </div>
+</div>

@@ -19,7 +19,6 @@
   <body>
 
 
-
 <section id="blog" class="section-padding wow fadeInUp delay-05s">
   <div class="container">
     <div class="row">
@@ -30,6 +29,16 @@
       </div>
 
 
+  <div>
+    <%= link_to town_email_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-leaf"></span>
+        My Town Email
+    <% end %>
+      <%= link_to new_city_path, class: 'btn btn-primary' do %>
+        <span class="glyphicon glyphicon-plus"></span>
+        New City
+      <% end %>
+  </div>
 
       <%- @cities.each do |city| %>
         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -97,71 +106,6 @@
    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfVjADQx0Qwf7EG77PFfIDZ7EMBIkJaQ4&callback=initMap">
    </script>
 
-
-
-<div class="page-header">
-  <%= link_to town_email_path, class: 'btn btn-primary' do %>
-  <span class="glyphicon glyphicon-leaf"></span>
-    My Town Email
-<% end %>
-  <%= link_to new_city_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New City
-  <% end %>
-  <h1 Listing>cities</h1>
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>City name</th>
-        <th>State</th>
-        <th>Us city</th>
-        <th>Population</th>
-        <th>One hundred pct by</th>
-        <th>Co2 emissions perannum</th>
-        <th>Wind</th>
-        <th>Solar</th>
-        <th>Other energy source</th>
-        <th>Image data</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody class="table-body">
-      <%- @cities.each do |city| %>
-      <tr>
-        <td><%= city.city_name %></td>
-        <td><%= city.state %></td>
-        <td><%= city.us_city %></td>
-        <td><%= city.population %></td>
-        <td><%= city.one_hundred_pct_by %></td>
-        <td><%= city.co2_emissions_perannum %></td>
-        <td><%= city.wind %></td>
-        <td><%= city.solar %></td>
-        <td><%= city.other_energy_source %></td>
-        <td><%= city.image_data %></td>
-        <td>
-          <%= link_to city do %>
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to edit_city_path(city) do %>
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to city, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
 
 </body>
 </html>
