@@ -49,6 +49,11 @@ class CitiesController < ApplicationController
     redirect_to cities_url, notice: 'City was successfully destroyed.'
   end
 
+  def index
+    # @cities = City.all
+    @cities = City.page(params[:page]).per(9).order('city_name')
+  end
+
   private
 
   # Only allow a trusted parameter "white list" through.

@@ -70,6 +70,7 @@
   </div>
 </section>
 
+
 # Google Maps API
 <div id="map" style="height:100%; width:100%"></div>
    <script>
@@ -106,6 +107,10 @@
    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfVjADQx0Qwf7EG77PFfIDZ7EMBIkJaQ4&callback=initMap">
    </script>
 
+  <div class="text-center">
+    <%= paginate @cities %>
+    <%= page_entries_info @cities %>
+  </div>
 
 </body>
 </html>
