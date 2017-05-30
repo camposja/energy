@@ -1,105 +1,3 @@
-<%= form_for(@city, html: { class: "form-horizontal", role: "form" }) do |f| %>
-
-  <%# Alert showing errors for this form %>
-  <% if @city.errors.any? %>
-    <div class="alert alert-danger alert-dismissable" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <h4><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h4>
-
-      <ul>
-      <% @city.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="container">
-
-    <%# city_name %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.text_field :city_name, class: "form-control j-form-control", placeholder: "City" %>
-      </div>
-    </div>
-
-    <%# state %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.text_field :state, class: "form-control j-form-control", placeholder: "State or Country" %>
-      </div>
-    </div>
-
-    <%# us_city %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.text_field :us_city, class: "form-control j-form-control", placeholder: "U.S. city?" %>
-      </div>
-    </div>
-
-    <%# population %>
-    <div class="form-group j-form-control">
-      <div class="col-sm-8">
-        <%= f.number_field :population, class: "form-control j-form-control", id: "subject", placeholder: "Population" %>
-      </div>
-    </div>
-
-    <%# one_hundred_pct_by %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.number_field :one_hundred_pct_by, class: "form-control j-form-control", placeholder: "100% Renewable by Year" %>
-      </div>
-    </div>
-
-    <%# co2_emissions_perannum %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.number_field :co2_emissions_perannum, class: "form-control j-form-control", placeholder: "CO2 emissions per Year" %>
-      </div>
-    </div>
-
-    <%# wind %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.number_field :wind, class: "form-control j-form-control", placeholder: "Wind %" %>
-      </div>
-    </div>
-
-    <%# solar %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.number_field :solar, class: "form-control j-form-control", placeholder: "Solar %" %>
-      </div>
-    </div>
-
-    <%# other_energy_source %>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <%= f.number_field :other_energy_source, class: "form-control j-form-control", placeholder: "Other energy sources %" %>
-      </div>
-    </div>
-
-      <%# image_data %>
-    <div class="form-group">
-      <%= f.label :image_data, class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-
-      <%# upload button %>
-      <%= f.hidden_field :image, value: @city.cached_image_data %>
-      <%= f.file_field :image %>
-      </div>
-    </div>
-</div>
-
-  <%# Submit %>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit class: "btn btn-primary btn-submit" %>
-    </div>
-  </div>
-<% end -%>
-
-
 
 <section id="contact" class="section-padding wow fadeInUp delay-05s">
   <div class="container">
@@ -121,92 +19,97 @@
         <div class="contact-form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
+            <%= form_for(@city, html: { class: "contactForm", role: "form" }) do |f| %>
+              <% if @city.errors.any? %>
+                <div class="col-md-12">
+                  <div class="alert alert-danger alert-dismissable" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h4>
+
+                    <ul>
+                    <% @city.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+              </div>
 
                <%# City %>
                 <div class="col-md-6 padding-right-zero">
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control j-form-control" id="name" placeholder="City" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validation"></div>
+                      <%= f.text_field :city_name, class: "form-control j-form-control", placeholder: "City" %>
                     </div>
                 </div>
 
                 <%# State %>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="email" class="form-control j-form-control" name="email" id="email" placeholder="State" data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validation"></div>
+                      <%= f.text_field :state, class: "form-control j-form-control", placeholder: "State or Country" %>
                     </div>
                 </div>
 
                 <%# U.S. city? %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="US city?" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.text_field :us_city, class: "form-control j-form-control", placeholder: "U.S. city?" %>
                     </div>
                 </div>
 
                 <%# Population %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="Population" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.number_field :population, class: "form-control j-form-control", id: "subject", placeholder: "Population" %>
                     </div>
                 </div>
 
                 <%# 100% by year %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="100% by year" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.number_field :one_hundred_pct_by, class: "form-control j-form-control", placeholder: "100% Renewable by Year" %>
                     </div>
                 </div>
 
                 <%# CO2 Emissions %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="CO2 emissions per year" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.number_field :co2_emissions_perannum, class: "form-control j-form-control", placeholder: "CO2 emissions per Year" %>
                     </div>
                 </div>
 
                 <%# Wind% %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="Wind" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.number_field :wind, class: "form-control j-form-control", placeholder: "Wind %" %>
                     </div>
                 </div>
 
                 <%# Solar% %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="Solar" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.number_field :solar, class: "form-control j-form-control", placeholder: "Solar %" %>
                     </div>
                 </div>
 
                 <%# Other% %>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="Other sources" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.number_field :other_energy_source, class: "form-control j-form-control", placeholder: "Other energy sources %" %>
                     </div>
                 </div>
 
                 <!-- Image field -->
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control j-form-control" name="subject" id="subject" placeholder="Image" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                      <%= f.hidden_field :image, value: @city.cached_image_data %>
+                      <%= f.file_field :image %>
                     </div>
                 </div>
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary btn-submit">Submit</button>
                 </div>
 
-            </form>
+            <% end %>
 
         </div>
       </div>

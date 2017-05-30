@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
     if city_name.present? && @city
       redirect_to @city
     else
-      redirect_to new_city_path
+      redirect_to new_city_path(city_name: city_name)
     end
   end
 
@@ -24,7 +24,7 @@ class CitiesController < ApplicationController
 
   # GET /cities/new
   def new
-    @city = City.new
+    @city = City.new(city_name: params[:city_name])
   end
 
   # GET /cities/1/edit

@@ -266,61 +266,21 @@
 
     <hr class="bottom-line">
   </div>
+  <% @cities.each do |city| %>
   <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
     <figure>
-      <%# image_tag(city.first image_url(:medium), class: "img-responsive") %>
-      <%= image_tag "port01.jpg", class: "img-responsive"  %>
+      <% if city.image_url(:medium) %>
+        <%= image_tag(city.image_url(:medium), size: "375x270") %>
+      <% else %>
+        <%= image_tag "port01.jpg", size: "375x270" %>
+      <% end %>
       <figcaption>
-          <h2>Project for Everyone</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+          <h2><%= city.city_name %></h2>
+          <p>Blah blah</p>
       </figcaption>
     </figure>
   </div>
-  <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-    <figure>
-        <%= image_tag "port02.jpg", class: "img-responsive" %>
-      <figcaption>
-          <h2>St Petersburg, FL.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-    <figure>
-      <%= image_tag "port03.jpg", class: "img-responsive" %>
-      <figcaption>
-          <h2>Project For Everyone</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-    <figure>
-      <%= image_tag "port04.jpg", class: "img-responsive" %>
-      <figcaption>
-          <h2>Project For Everyone</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-    <figure>
-      <%= image_tag "port05.jpg", class: "img-responsive" %>
-      <figcaption>
-          <h2>Project For Everyone</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-    <figure>
-      <%= image_tag "port06.jpg", class: "img-responsive" %>
-      <figcaption>
-          <h2>Project For Everyone</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-      </figcaption>
-    </figure>
-  </div>
+  <% end %>
 </div>
 </div>
 </section>

@@ -431,7 +431,7 @@ TESTIMONIAL
 ***********************************/
 #testimonial
 {
-    background: url('bg.jpg') no-repeat;
+    background: image-url('bg.jpg') no-repeat;
     background-size: cover;
     min-height: 390px;
 }
@@ -728,8 +728,8 @@ body{
     font-size: 14px;
 }
 .btn-download, .btn-more, .btn-download:hover, .btn-more:hover, .btn-download:focus, .btn-more:focus {
-    font-size: 12px;
-    padding: 7px 18px;
+    font-size: 9px;
+    padding: 4px 10px;
 }
 .wrap-item h3 {
     font-size: 18px;
