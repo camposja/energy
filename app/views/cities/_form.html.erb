@@ -14,94 +14,81 @@
     </div>
   <% end %>
 
-  <%# city_name %>
-  <div class="form-group">
-    <div class="col-sm-10">
-      <%= f.text_field :city_name, class: "form-control j-form-control", placeholder: "City" %>
+  <div class="container">
+
+    <%# city_name %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.text_field :city_name, class: "form-control j-form-control", placeholder: "City" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# state %>
-  <div class="form-group">
-    <%= f.label :state, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :state, class: "form-control j-form-control" %>
+    <%# state %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.text_field :state, class: "form-control j-form-control", placeholder: "State or Country" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# us_city %>
-  <div class="form-group">
-    <%= f.label :us_city, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :us_city, class: "form-control j-form-control" %>
+    <%# us_city %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.text_field :us_city, class: "form-control j-form-control", placeholder: "U.S. city?" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# population %>
-  <div class="form-group j-form-control">
-    <%= f.label :population, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :population, class: "form-control j-form-control", id: "subject" %>
+    <%# population %>
+    <div class="form-group j-form-control">
+      <div class="col-sm-8">
+        <%= f.number_field :population, class: "form-control j-form-control", id: "subject", placeholder: "Population" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# one_hundred_pct_by %>
-  <div class="form-group">
-    <%= f.label :one_hundred_pct_by, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :one_hundred_pct_by, class: "form-control j-form-control" %>
+    <%# one_hundred_pct_by %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.number_field :one_hundred_pct_by, class: "form-control j-form-control", placeholder: "100% Renewable by Year" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# co2_emissions_perannum %>
-  <div class="form-group">
-    <%= f.label :co2_emissions_perannum, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :co2_emissions_perannum, class: "form-control j-form-control" %>
+    <%# co2_emissions_perannum %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.number_field :co2_emissions_perannum, class: "form-control j-form-control", placeholder: "CO2 emissions per Year" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# wind %>
-  <div class="form-group">
-    <%= f.label :wind, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :wind, class: "form-control j-form-control" %>
+    <%# wind %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.number_field :wind, class: "form-control j-form-control", placeholder: "Wind %" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# solar %>
-  <div class="form-group">
-    <%= f.label :solar, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :solar, class: "form-control j-form-control" %>
+    <%# solar %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.number_field :solar, class: "form-control j-form-control", placeholder: "Solar %" %>
+      </div>
     </div>
-  </div>
 
-
-  <%# other_energy_source %>
-  <div class="form-group">
-    <%= f.label :other_energy_source, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :other_energy_source, class: "form-control j-form-control" %>
+    <%# other_energy_source %>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.number_field :other_energy_source, class: "form-control j-form-control", placeholder: "Other energy sources %" %>
+      </div>
     </div>
-  </div>
 
+      <%# image_data %>
+    <div class="form-group">
+      <%= f.label :image_data, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
 
-  <%# image_data %>
-<div class="form-group">
-  <%= f.label :image_data, class: "col-sm-2 control-label" %>
-  <div class="col-sm-10">
-  <%# upload button %>
-  <%= f.hidden_field :image, value: @city.cached_image_data %>
-  <%= f.file_field :image %>
-  </div>
+      <%# upload button %>
+      <%= f.hidden_field :image, value: @city.cached_image_data %>
+      <%= f.file_field :image %>
+      </div>
+    </div>
 </div>
 
   <%# Submit %>
