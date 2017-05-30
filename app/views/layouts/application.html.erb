@@ -44,13 +44,18 @@
               <li class="active">
                 <%= link_to "Energy Currently", root_path(anchor: "current") %>
               </li>
-              <li class=""><a href="#renewable">Renewable Energy</a></li>
-              <li class=""><a href="#committed">Cities committed to 100%</a></li>
-              <li class=""><a href="#mytown">My Renewable Town</a></li>
+              <li class="">
+                <%= link_to "Renewable Energy", root_path(anchor: "renewable") %>
+              </li>
+              <li class="">
+                <%= link_to "Cities 100% committed", root_path(anchor: "committed") %>
+              </li>
+              <li class="">
+                <%= link_to "My Town", root_path(anchor: "mytown") %>
+              </li>
 
 
               <% if logged_in? %>
-
                   <li class="active"><a href="">User: <%= truncate(current_user.name, length: 12) %></a></li>
                   <li class="active"><%= link_to "Logout", logout_path %></li>
 
