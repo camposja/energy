@@ -319,49 +319,53 @@
 <!---->
 
 <section id="mytown" class="j-section-padding wow fadeInUp delay-05s">
-<div class="container">
-<div class="row">
-  <div class="col-md-12 text-center">
-    <h2 class="service-title pad-bt15">How would <input type="text" class="form-control input-sm your-town" name="subject" id="subject" placeholder="your town" data-rule="minlen:3" data-msg="Please enter valid city name" /> look like as a 100% committed city?</h2>
-    <p class="sub-title pad-bt15">Type the name of your town, then press the button below to find out more</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <%= form_for :city, url: new_or_create_cities_path, method: 'post' do |f| %>
+          <h2 class="service-title pad-bt15">
+            How would <input type="text" class="form-control input-sm your-town" name="city_name" id="subject" placeholder="your town" data-rule="minlen:3" data-msg="Please enter valid city name" /> look like as a 100% committed city?
+          </h2>
+          <p class="sub-title pad-bt15">Type the name of your town, then press the button below to find out more</p>
 
-    <%= link_to new_city_path, class: 'btn btn-download' do %>
-      <span class="fa fa-tasks"> </span>
-      Find out
-    <% end %>
+          <%= f.button type: "submit", class: 'btn btn-download' do %>
+            <span class="fa fa-tasks"> </span>
+            Find out
+          <% end %>
 
-    <hr class="bottom-line">
+          <hr class="bottom-line">
+        <% end %>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <h3><span>B</span>e proactive</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="">learn more...</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <h3><span>P</span>art of the solution</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="">learn more...</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <h3><span>S</span>ave the earth</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="">learn more...</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <h3><span>R</span>educe reliance</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="">Learn more...</a>
+        </div>
+      </div>
   </div>
-  <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="service-item">
-      <h3><span>B</span>e proactive</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="">learn more...</a>
-    </div>
   </div>
-  <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="service-item">
-      <h3><span>P</span>art of the solution</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="">learn more...</a>
-    </div>
-  </div>
-  <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="service-item">
-      <h3><span>S</span>ave the earth</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="">learn more...</a>
-    </div>
-  </div>
-  <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="service-item">
-      <h3><span>R</span>educe reliance</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="">Learn more...</a>
-    </div>
-  </div>
-</div>
-</div>
 </section>
 
 </html>

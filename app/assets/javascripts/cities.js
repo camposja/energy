@@ -8,9 +8,9 @@ $(document).ready(function(){
   $('.j-body2').on('click', '.fav-heart', function(event) {
     console.log("you clicked this")
     let cityId = $(this).data("cityid")
+    console.log("city is", cityId)
     $(this).removeClass('fav-heart')
     $(this).addClass('faved-heart')
-
 
     $.ajax({
       type: "POST",
@@ -22,6 +22,7 @@ $(document).ready(function(){
   $('.j-body2').on('click', '.faved-heart', function(event) {
     console.log("you clicked this")
     let cityId = $(this).data("cityid")
+    console.log("city is", cityId)
     $(this).removeClass('faved-heart')
     $(this).addClass('fav-heart')
 

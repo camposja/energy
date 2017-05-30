@@ -1,6 +1,17 @@
 class CitiesController < ApplicationController
   before_action :authenticate!, except: [:index]
 
+  def new_or_create
+    city_name = params[:city_name]
+
+    @city = City.where("city_name ilike ?", "%#{city_name}%").first
+    if city_name.present? && @city
+      redirect_to @city
+    else
+      redirect_to new_city_path
+    end
+  end
+
   # GET /cities
   def index
     @cities = City.all

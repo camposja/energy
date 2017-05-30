@@ -1,5 +1,5 @@
-<div class="page-header">
-  <div class="container">
+<div class="container">
+  <div class="pull-right">
     <%= link_to cities_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-list-alt"></span>
       Back
@@ -12,39 +12,39 @@
       <span class="glyphicon glyphicon-leaf"></span>
       My Town Email
     <% end %>
-    <h1>
-      <%= @city.city_name %>, <%= @city.state %>
-    </h1>
+  </div>
 
-    <div>
-      <% if logged_in? && favorited(@city.id) == true %>
-        <p class="faved-heart pull-left" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fav-heart" aria-hidden=“true”></i></p>
-      <% elsif logged_in? && favorited(@city.id) == false %>
-        <p class="fav-heart pull-left" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></p>
-      <% end %>
-    </div>
-
-    <div>
-      <h2>100% Renewable by: <%= @city.one_hundred_pct_by %></h2>
-    </div>
-
-  <!-- Columns are always 50% wide, on mobile and desktop -->
-  <div class="row">
-    <div class="col-md-6 col-sm-12">
-      <% if @city.image.present? %>
-        <%= image_tag(@city.image_url(:medium), class: "img-responsive") %>
+  <h1>
+    <%= @city.city_name %>, <%= @city.state %>
+    <% if logged_in? %>
+      <% if favorited(@city.id)%>
+        <span class="faved-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></span>
       <% else %>
-        <% image_tag('male.png') %>
+        <span class="fav-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></span>
       <% end %>
-    </div>
-    <div class="col-md-6 col-sm-12">
-      <dl class="dl-horizontal">
-        <h3>Polulation: <%= number_with_delimiter(@city.population, delimiter: ',') %></h3>
-        <h3>Co2 emissions perannum: <%= number_with_delimiter(@city.co2_emissions_perannum, delimiter: ',') %></h3>
-        <h3>Percentage of Wind projected: <%= number_to_percentage(@city.wind, precision: 0) %></h3>
-        <h3>Percentage of Solar projected: <%= number_to_percentage(@city.solar, precision: 0) %></h3>
-        <h3>Percentage of other Renewables: <%= number_to_percentage(@city.other_energy_source, precision: 0) %></h3>
-    </div>
+    <% end %>
+  </h1>
+
+  <div>
+    <h2>100% Renewable by: <%= @city.one_hundred_pct_by %></h2>
   </div>
+
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <% if @city.image.present? %>
+      <%= image_tag(@city.image_url(:medium), class: "img-responsive") %>
+    <% else %>
+      <% image_tag('male.png') %>
+    <% end %>
   </div>
+  <div class="col-md-6 col-sm-12">
+    <dl class="dl-horizontal">
+      <h3>Polulation: <%= number_with_delimiter(@city.population, delimiter: ',') %></h3>
+      <h3>Co2 emissions perannum: <%= number_with_delimiter(@city.co2_emissions_perannum, delimiter: ',') %></h3>
+      <h3>Percentage of Wind projected: <%= number_to_percentage(@city.wind, precision: 0) %></h3>
+      <h3>Percentage of Solar projected: <%= number_to_percentage(@city.solar, precision: 0) %></h3>
+      <h3>Percentage of other Renewables: <%= number_to_percentage(@city.other_energy_source, precision: 0) %></h3>
+  </div>
+</div>
 </div>
