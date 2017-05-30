@@ -43,7 +43,7 @@
 
             <% if logged_in? %>
 
-                <li class="active"><a href="">Logged in: <%= current_user.name %></a></li>
+                <li class="active"><a href="">User: <%= truncate(current_user.name, length: 12) %></a></li>
                 <li class="active"><%= link_to "Logout", logout_path %></li>
 
               <% else %>
@@ -255,7 +255,7 @@
 <div class="container">
 <div class="row">
   <div class="col-md-12 text-center">
-    <h2 class="service-title pad-bt15">100% cities Renewable Energy Cities</h2>
+    <h2 class="service-title pad-bt15">100% Renewable Energy Cities</h2>
     <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
     <hr class="bottom-line">
   </div>
