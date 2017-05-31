@@ -28,27 +28,28 @@
       <% end %>
     <% end %>
   </h1>
-
   <div>
     <h2>100% Renewable by: <%= @city.one_hundred_pct_by %></h2>
   </div>
 
 <!-- Columns are always 50% wide, on mobile and desktop -->
-<div class="row">
-  <div class="col-md-6 col-sm-12">
-    <% if @city.image.present? %>
-      <%= image_tag(@city.image_url(:medium), class: "img-responsive") %>
-    <% else %>
-      <% image_tag('male.png') %>
-    <% end %>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <% if @city.image.present? %>
+        <%= image_tag(@city.image_url(:medium), class: "img-responsive") %>
+      <% else %>
+        <% image_tag('male.png') %>
+      <% end %>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <dl class="dl-horizontal">
+        <h3>Polulation: <%= number_with_delimiter(@city.population, delimiter: ',') %></h3>
+        <h3>Co2 emissions perannum: <%= number_with_delimiter(@city.co2_emissions_perannum, delimiter: ',') %></h3>
+        <h3>Percentage of Wind projected: <%= number_to_percentage(@city.wind, precision: 0) %></h3>
+        <h3>Percentage of Solar projected: <%= number_to_percentage(@city.solar, precision: 0) %></h3>
+        <h3>Percentage of other Renewables: <%= number_to_percentage(@city.other_energy_source, precision: 0) %></h3>
+      </dl>
+      <div class="well well-sm">Use the "My Town Email" button above to generate a souvenir email about your Renewable Energy town.</div>
+    </div>
   </div>
-  <div class="col-md-6 col-sm-12">
-    <dl class="dl-horizontal">
-      <h3>Polulation: <%= number_with_delimiter(@city.population, delimiter: ',') %></h3>
-      <h3>Co2 emissions perannum: <%= number_with_delimiter(@city.co2_emissions_perannum, delimiter: ',') %></h3>
-      <h3>Percentage of Wind projected: <%= number_to_percentage(@city.wind, precision: 0) %></h3>
-      <h3>Percentage of Solar projected: <%= number_to_percentage(@city.solar, precision: 0) %></h3>
-      <h3>Percentage of other Renewables: <%= number_to_percentage(@city.other_energy_source, precision: 0) %></h3>
-  </div>
-</div>
 </div>
