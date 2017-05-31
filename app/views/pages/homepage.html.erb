@@ -40,13 +40,7 @@
             <li class=""><a href="#committed">Cities 100% committed</a></li>
             <li class=""><a href="#mytown">My Town</a></li>
 
-
-            <% if logged_in? %>
-                <li class="active"><a href="">User: <%= truncate(current_user.name, length: 12) %></a></li>
-                <li class="active"><%= link_to "Logout", logout_path %></li>
-            <% else %>
-                <li class="active"><%= link_to "Log in", login_path %></li>
-            <% end %>
+            <!-- # Removed Login & Logged Out logic -->
           </ul>
         </div>
       </div>
