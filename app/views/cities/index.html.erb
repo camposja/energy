@@ -12,15 +12,14 @@
       <a href="#" class="btn btn-download">How can I help</a> -->
 
     <div class="brn-btn text-center">
+      <%= link_to root_path, class: 'btn btn-primary btn-download' do %>
+        <span class="glyphicon glyphicon-arrow-left"></span>
+          Back
+      <% end %>
       <%= link_to new_city_path, class: 'btn btn-more' do %>
         <span class="glyphicon glyphicon-plus"></span>
         New City
       <% end %>
-      <%= link_to town_email_path, class: 'btn btn-primary btn-download' do %>
-        <span class="glyphicon glyphicon-envelope"></span>
-          My Town Email
-      <% end %>
-
     </div>
 
     <%- @cities.each do |city| %>
