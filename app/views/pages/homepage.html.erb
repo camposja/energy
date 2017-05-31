@@ -42,14 +42,10 @@
 
 
             <% if logged_in? %>
-
                 <li class="active"><a href="">User: <%= truncate(current_user.name, length: 12) %></a></li>
                 <li class="active"><%= link_to "Logout", logout_path %></li>
-
-              <% else %>
-
+            <% else %>
                 <li class="active"><%= link_to "Log in", login_path %></li>
-
             <% end %>
           </ul>
         </div>
@@ -64,10 +60,7 @@
       <h1 class="bnr-title">100% Commi<span>ted</span></h1>
       <h2 class="bnr-sub-title">Renewable Energy</h2>
       <p class="bnr-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <br>ex ea commodo consequat.</p>
-      <div class="brn-btn">
-        <a href="#" class="btn btn-download">How can I help</a>
-        <a href="#" class="btn btn-more">Learn More</a>
-      </div>
+
       <div class="overlay-detail">
         <a href="#feature"><i class="fa fa-angle-down"></i></a>
       </div>
@@ -275,7 +268,11 @@
         <%= image_tag "port01.jpg", size: "375x270" %>
       <% end %>
       <figcaption>
+        <% if city.city_name.present? %>
           <h2><%= city.city_name %>, <%= city.state %></h2>
+        <% else %>
+          <h2><%= city.state %></h2>
+        <% end %>
           <p>The city has set a goal to utilize 100% Renewable Energy by the year <%= city.one_hundred_pct_by %></p>
       </figcaption>
     </figure>

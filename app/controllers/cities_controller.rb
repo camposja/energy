@@ -62,7 +62,7 @@ class CitiesController < ApplicationController
 
   def index
     # @cities = City.all
-    @cities = City.page(params[:page]).per(9).order('city_name')
+    @cities = City.page(params[:page]).per(12).order('city_name')
   end
 
   private

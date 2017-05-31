@@ -20,7 +20,7 @@
         <span class="glyphicon glyphicon-envelope"></span>
           My Town Email
       <% end %>
-      
+
     </div>
 
     <%- @cities.each do |city| %>
@@ -35,7 +35,11 @@
 
           </div>
           <div class="blog-info">
-            <h2><%= city.city_name %>, <%= city.state %></h2>
+            <% if city.city_name.present? %>
+              <h2><%= city.city_name %>, <%= city.state %></h2>
+            <% else %>
+              <h2><%= city.state %></h2>
+            <% end %>
             <div class="blog-comment blog-flex">
               <p>100% Renewable by: <%= city.one_hundred_pct_by %></p>
               <% if logged_in? && favorited(city.id) == true %>
