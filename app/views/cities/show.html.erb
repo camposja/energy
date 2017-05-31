@@ -15,7 +15,11 @@
   </div>
 
   <h1>
-    <%= @city.city_name %>, <%= @city.state %>
+    <% if @city.city_name.present? %>
+      <%= @city.city_name %>, <%= @city.state %>
+    <% else %>
+      <%= @city.state %>
+    <% end %>
     <% if logged_in? %>
       <% if favorited(@city.id)%>
         <span class="faved-heart" data-remote=true data-type=script data-cityid="<%= @city.id %>"><i class="fa fa-heart" aria-hidden=“true”></i></span>
