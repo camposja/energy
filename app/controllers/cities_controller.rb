@@ -65,6 +65,15 @@ class CitiesController < ApplicationController
     @cities = City.page(params[:page]).per(12).order('city_name')
   end
 
+  def email
+    city = City.find(params[:id])
+    user = current_user
+
+    NotificationsMailer.your_town(city, user).deliver_later
+
+    redirect_to city
+  end
+
   private
 
   # Only allow a trusted parameter "white list" through.

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :cities do
     collection do
-      post 'new-or-create', as: :new_or_create
+      get 'new-or-create', as: :new_or_create
+    end
+
+    member do
+      get 'email', as: :email
     end
   end
 
@@ -22,8 +26,7 @@ Rails.application.routes.draw do
   post   '/favorites/:cityId'         => 'favorites#create'
   delete '/favorites/destroy/:cityId' => 'favorites#destroy'
 
-#Mailer route
-  get '/town_email' => 'session#souvenir_email'
+  #Mailer route
 
   mount Shrine::DownloadEndpoint => "/attachments"
 

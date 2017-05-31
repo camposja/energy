@@ -287,7 +287,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <%= form_for :city, url: new_or_create_cities_path, method: 'post' do |f| %>
+        <%= form_for :city, url: new_or_create_cities_path, method: 'get' do |f| %>
           <h2 class="service-title pad-bt15">
             How would <input type="text" class="form-control input-sm your-town" name="city_name" id="subject" placeholder="your town" data-rule="minlen:3" data-msg="Please enter valid city name" /> look like as a 100% Renewable Energy city?
           </h2>
