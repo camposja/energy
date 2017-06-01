@@ -48,9 +48,17 @@
               <% end %>
               <%= social_share_button_tag %>
             </div>
-            <p><%= city.city_name %>, <%= city.state %> has a population of <%= number_with_delimiter(city.population, delimiter: ',') %>. <%= city.city_name %> has current CO2 emissions of
-              <%= number_with_delimiter(city.co2_emissions_perannum, delimiter: ',') %> cubic tons per year. The city has set a goal to use
-              100% Renewable Energy by the year <%= city.one_hundred_pct_by %>.</p>
+            <p><% if city.city_name.present? %>
+                  <%= city.city_name %>, <%= city.state %>
+                <% else %>
+                  <%= city.state %>
+                <% end %>
+              has a population of <%= number_with_delimiter(city.population, delimiter: ',') %>. <%= city.city_name %> has current CO2 emissions of
+              <%= number_with_delimiter(city.co2_emissions_perannum, delimiter: ',') %> cubic tons per year. The city has set a goal to utilize 100
+              <%= link_to city, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              %
+              <% end %>
+              Renewable Energy by the year <%= city.one_hundred_pct_by %>.</p>
             <!-- <a href="" class="read-more">Read more →</a> -->
             <%= link_to "Read More →", city, class: "read-more" %>
           </div>

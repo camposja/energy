@@ -11,6 +11,15 @@
         <div class="loction-info white">
           <p><i class="fa fa-plug fa-fw pull-left fa-5x"></i>MANDATORY FIELDS:
             <br>State or Country<br>Population<br>100% by year</p>
+            <hr class="bottom-line white-bg">
+            <%= link_to cities_path, class: 'btn btn-submit' do %>
+              <span class="glyphicon glyphicon-arrow-left"></span>
+              Cities
+            <% end %>
+            <%= link_to @city, class: 'btn btn-submit' do %>
+              <span class="glyphicon glyphicon-picture"></span>
+              Back to current
+            <% end %>
 
         </div>
       </div>
