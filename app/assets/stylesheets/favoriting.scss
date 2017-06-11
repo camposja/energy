@@ -15,16 +15,30 @@
 
 @media screen and (max-width:768px) {
   .blog-flex {
-  font-size: 30px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-$size: 30px;
+  $size: 30px;
 
-.social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
+  .social-share-button {
+    .ssb-icon {
+      background-size: $size $size;
+      height: $size;
+      width: $size;
+    }
   }
-}
+
+  .fav-heart {
+    font-size: 30px;
+    padding: 0 10px;
+  }
+
+  .faved-heart {
+    font-size: 30px;
+    padding: 0 10px;
+    color: red;
+  }
 }
