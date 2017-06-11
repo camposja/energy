@@ -5,7 +5,7 @@ $(document).ready(function(){
 // $(document).on('turbolinks:load', function() {
 
   // Favoriting
-  $('.j-body2').on('click', '.fav-heart', function(event) {
+  $('.j-body2').on('click touchstart', '.fav-heart', function(event) {
     console.log("you clicked this")
     let cityId = $(this).data("cityid")
     console.log("city is", cityId)
@@ -19,7 +19,7 @@ $(document).ready(function(){
   })
 
   // Unfavoriting
-  $('.j-body2').on('click', '.faved-heart', function(event) {
+  $('.j-body2').on('click touchstart', '.faved-heart', function(event) {
     console.log("you clicked this")
     let cityId = $(this).data("cityid")
     console.log("city is", cityId)
