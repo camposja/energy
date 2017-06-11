@@ -6,6 +6,22 @@
         <p class="sub-title pad-bt15">See below our Catalogue of U.S. cities+ commited to 100% Renewable Energy.</p>
         <hr class="bottom-line">
       </div>
+
+
+      <div class="col-md-12 text-center">
+        <%= form_for :city, url: new_or_create_cities_path, class: 'form-inline', method: 'get' do |f| %>
+          <h2 class="service-title pad-bt15 form-group">
+            <input type="text" class="form-control input-sm your-town" name="city_name" id="subject" placeholder="City Search" data-rule="minlen:3" data-msg="Please enter valid city name" />
+
+          <%= f.button type: "submit", class: 'btn btn-submit' do %>
+            <span class="fa fa-globe"> </span>
+            Search
+          <% end %>
+          </h2>
+        <% end %>
+      </div>
+
+
     </div>
 
     <!-- <div class="brn-btn">
@@ -20,6 +36,7 @@
         <span class="glyphicon glyphicon-plus"></span>
         New City
       <% end %>
+      <hr class="bottom-line">
     </div>
 
     <%- @cities.each do |city| %>

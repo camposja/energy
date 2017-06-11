@@ -7,4 +7,8 @@ class City < ApplicationRecord
   validates :one_hundred_pct_by, presence: true
 
   has_many :favorites, dependent: :destroy
+
+  def self.search(search)
+    where("city_name ILIKE ? or state ILIKE ?", "%#{search}%", "%#{search}%")
+  end
 end

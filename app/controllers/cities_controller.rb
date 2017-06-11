@@ -14,7 +14,8 @@ class CitiesController < ApplicationController
 
   # GET /cities
   def index
-    @cities = City.all
+    # @cities = City.all
+    @cities = City.page(params[:page]).per(12).order('city_name')
   end
 
   # GET /cities/1
@@ -58,11 +59,6 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @city.destroy
     redirect_to cities_url, notice: 'City was successfully destroyed.'
-  end
-
-  def index
-    # @cities = City.all
-    @cities = City.page(params[:page]).per(12).order('city_name')
   end
 
   def email
