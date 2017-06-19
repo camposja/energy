@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+![](https://raw.githubusercontent.com/camposja/energy/master/docs/Screen%20Shot%202017-06-18%20at%209.06.24%20PM.png)
