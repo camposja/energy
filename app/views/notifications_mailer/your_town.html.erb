@@ -6,61 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
-
-<div class="container">
-  <div class="page-header row">
-    <div class="col-md-6 col-sm-12">
-
-
-    <h1>Renewable Energy</h1>
-      <p>
-        Find out more informaiton about U.S. cities commited to 100% Renewable Energy <%= link_to "here.", cities_url %>
-      </p>
-      <p>Why is Renewable Energy important.</p>
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="wrap-item text-center">
-          <div class="item-img">
-            <%= image_tag("ser01.png") %>
+  <div class="container">
+    <div class="page-header row">
+      <div class="col-md-6 col-sm-12">
+        <h1>Renewable Energy</h1>
+        <p>Find out more informaiton about U.S. cities commited to 100% Renewable Energy <%= link_to "here.", cities_url %></p>
+        <p>Why is Renewable Energy important.</p>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="wrap-item text-center">
+            <div class="item-img">
+              <%= image_tag("ser01.png") %>
+            </div>
+            <h3 class="pad-bt15">Renewables</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
-          <h3 class="pad-bt15">Renewables</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="wrap-item text-center">
+            <div class="item-img">
+              <%= image_tag("ser01.png") %>
+            </div>
+            <h3 class="pad-bt15">Renewables</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="wrap-item text-center">
-          <div class="item-img">
-            <%= image_tag("ser01.png") %>
-          </div>
-          <h3 class="pad-bt15">Renewables</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
+
+      <div class="col-md-6 col-sm-12">
+        <h1>Image your town commited to 100% Renewable Energy</h1>
+        <dt>City / Town:</dt>
+          <dd><%= @city.city_name %></dd>
+        <dt>State or Country:</dt>
+          <dd><%= @city.state %></dd>
+        <dt>Population:</dt>
+          <dd><%= @city.population %></dd>
+        <dt>100% by year:</dt>
+          <dd><%= @city.one_hundred_pct_by %></dd>
+        <br>
+        <dd><%= image_tag(@city.image_url(:medium)) %></dd>
       </div>
     </div>
 
-    <div class="col-md-6 col-sm-12">
-
-
-      <h1>Image your town commited to 100% Renewable Energy</h1>
-      <dt>City / Town:</dt>
-      <dd><%= @city.city_name %></dd>
-
-      <dt>State or Country:</dt>
-      <dd><%= @city.state %></dd>
-
-      <dt>Population:</dt>
-      <dd><%= @city.population %></dd>
-
-      <dt>100% by year:</dt>
-      <dd><%= @city.one_hundred_pct_by %></dd>
-
-      <p>  . </p>
-      <dt></dt>
-      <dd><%= image_tag(@city.image_url(:medium)) %></dd>
-    </div>
+    <h3>About the developer:</h3>
+    <p>Jose A. Campos is the developer of this website.</p>
+    <p>His Portfolio website can be found by clicking <a href="https://camposja.github.io/" target="_blank">here</a></p>
   </div>
-
-
-  <h3>About the developer:</h3>
-  <p>Jose A. Campos is the developer of this website.</p>
-</div>
 </html>
