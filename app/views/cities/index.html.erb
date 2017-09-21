@@ -7,7 +7,6 @@
         <hr class="bottom-line">
       </div>
 
-
       <div class="col-md-12 text-center">
         <%= form_for :city, url: new_or_create_cities_path, class: 'form-inline', method: 'get' do |f| %>
           <h2 class="service-title pad-bt15 form-group">
@@ -20,8 +19,6 @@
           </h2>
         <% end %>
       </div>
-
-
     </div>
 
     <!-- <div class="brn-btn">
@@ -41,46 +38,45 @@
 
     <%- @cities.each do |city| %>
         <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="blog-sec">
-          <div class="blog-img">
-            <% if city.image.present? %>
-              <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
-            <% else %>
-              <% image_tag('TownStock.jpg') %>
-            <% end %>
-
-          </div>
-          <div class="blog-info">
-            <% if city.city_name.present? %>
-              <h2><%= city.city_name %>, <%= city.state %></h2>
-            <% else %>
-              <h2><%= city.state %></h2>
-            <% end %>
+          <div class="blog-sec">
+            <div class="blog-img">
+              <% if city.image.present? %>
+                <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
+              <% else %>
+                <% image_tag('TownStock.jpg') %>
+              <% end %>
+            </div>
+            <div class="blog-info">
+              <% if city.city_name.present? %>
+                <h2><%= city.city_name %>, <%= city.state %></h2>
+              <% else %>
+                <h2><%= city.state %></h2>
+              <% end %>
             <div class="blog-comment blog-flex">
               <p>100% Renewable by: <%= city.one_hundred_pct_by %></p>
-              <% if logged_in? && favorited(city.id) == true %>
-                <span class="faved-heart" data-remote=true data-type=script data-cityid="<%= city.id %>"><i class="fa fa-heart" aria-hidden=“true”> </i></span>
-              <% elsif logged_in? && favorited(city.id) == false %>
-                <span class="fav-heart" data-remote=true data-type=script data-cityid="<%= city.id %>"><i class="fa fa-heart" aria-hidden=“true”> </i></span>
-              <% end %>
-              <%= social_share_button_tag %>
-            </div>
-            <p><% if city.city_name.present? %>
-                  <%= city.city_name %>, <%= city.state %>
-                <% else %>
-                  <%= city.state %>
+                <% if logged_in? && favorited(city.id) == true %>
+                  <span class="faved-heart" data-remote=true data-type=script data-cityid="<%= city.id %>"><i class="fa fa-heart" aria-hidden=“true”> </i></span>
+                <% elsif logged_in? && favorited(city.id) == false %>
+                  <span class="fav-heart" data-remote=true data-type=script data-cityid="<%= city.id %>"><i class="fa fa-heart" aria-hidden=“true”> </i></span>
                 <% end %>
-              has a population of <%= number_with_delimiter(city.population, delimiter: ',') %>. <%= city.city_name %> has current CO2 emissions of
-              <%= number_with_delimiter(city.co2_emissions_perannum, delimiter: ',') %> cubic tons per year. The city has set a goal to utilize 100
-              <%= link_to city, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              %
-              <% end %>
-              Renewable Energy by the year <%= city.one_hundred_pct_by %>.</p>
-            <!-- <a href="" class="read-more">Read more →</a> -->
-            <%= link_to "Read More →", city, class: "read-more" %>
+                <%= social_share_button_tag %>
+            </div>
+              <p><% if city.city_name.present? %>
+                    <%= city.city_name %>, <%= city.state %>
+                  <% else %>
+                    <%= city.state %>
+                  <% end %>
+                has a population of <%= number_with_delimiter(city.population, delimiter: ',') %>. <%= city.city_name %> has current CO2 emissions of
+                <%= number_with_delimiter(city.co2_emissions_perannum, delimiter: ',') %> cubic tons per year. The city has set a goal to utilize 100
+                <%= link_to city, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                %
+                <% end %>
+                Renewable Energy by the year <%= city.one_hundred_pct_by %>.</p>
+              <!-- <a href="" class="read-more">Read more →</a> -->
+              <%= link_to "Read More →", city, class: "read-more" %>
+            </div>
           </div>
         </div>
-      </div>
     <% end %>
   </div>
 </section>
