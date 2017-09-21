@@ -19,7 +19,6 @@
               <span class="glyphicon glyphicon-picture"></span>
               Back to current
             <% end %>
-
         </div>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12">
@@ -32,10 +31,9 @@
                   <div class="alert alert-danger alert-dismissable" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h4>
-
                     <ul>
-                    <% @city.errors.full_messages.each do |msg| %>
-                      <li><%= msg %></li>
+                      <% @city.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
                     <% end %>
                     </ul>
                   </div>
@@ -115,9 +113,7 @@
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary btn-submit">Submit</button>
                 </div>
-
-            <% end %>
-
+              <% end %>
         </div>
       </div>
     </div>
