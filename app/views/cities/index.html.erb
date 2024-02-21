@@ -21,9 +21,6 @@
       </div>
     </div>
 
-    <!-- <div class="brn-btn">
-      <a href="#" class="btn btn-download">How can I help</a> -->
-
     <div class="brn-btn text-center">
       <%= link_to root_path, class: 'btn btn-primary btn-download' do %>
         <span class="glyphicon glyphicon-arrow-left"></span>
@@ -41,7 +38,9 @@
           <div class="blog-sec">
             <div class="blog-img">
               <% if city.image.present? %>
-                <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
+                # TODO: troubleshoot shrine to same images correctly
+                # temporary fix
+                <%# image_tag(city.image_url(:medium), class: "img-responsive") %>
               <% else %>
                 <% image_tag('TownStock.jpg') %>
               <% end %>

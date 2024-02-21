@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   #Mailer route
 
-  mount Shrine::DownloadEndpoint => "/attachments"
+  mount Shrine::download_endpoint, at: "/attachments"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
