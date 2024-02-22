@@ -50,8 +50,11 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'awesome_print'
+  gem 'dotenv-rails'
   gem 'listen', '~> 3.0.5'
+  gem 'rubocop'
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
 
@@ -75,12 +78,6 @@ gem 'kaminari'
 
 # Facebook sharing
 gem 'social-share-button', '~> 0.10.0'
-
-group :development do
-  gem 'awesome_print'
-  gem 'dotenv-rails'
-  gem 'rubocop'
-end
 
 # gem 'refile'
 # gem 'refile-postgres'
