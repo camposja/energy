@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class City < ApplicationRecord
   include ImageUploader[:image]
 
@@ -9,6 +11,6 @@ class City < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   def self.search(search)
-    where("city_name ILIKE ? or state ILIKE ?", "%#{search}%", "%#{search}%")
+    where('city_name ILIKE ? or state ILIKE ?', "%#{search}%", "%#{search}%")
   end
 end

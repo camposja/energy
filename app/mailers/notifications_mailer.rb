@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class NotificationsMailer < ApplicationMailer
-  default from: "100pct@RenewableEnergy.org"
+  default from: '100pct@RenewableEnergy.org'
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -11,6 +13,6 @@ class NotificationsMailer < ApplicationMailer
     @city = city
 
     mail to: @user.email,
-         subject: "100% Renewable Energy Cities → Your Town"
+         subject: '100% Renewable Energy Cities → Your Town'
   end
 end

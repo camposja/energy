@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -19,8 +21,8 @@ class ApplicationController < ActionController::Base
 
   # Method to use in filter to ensure the user is logged in
   def authenticate!
-    unless logged_in?
-      redirect_to login_path(redirect_user_url: request.original_url)
-    end
+    return if logged_in?
+
+    redirect_to login_path(redirect_user_url: request.original_url)
   end
 end

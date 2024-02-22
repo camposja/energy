@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CitiesController < ApplicationController
   before_action :authenticate!, except: [:index]
 
   def new_or_create
     city_name = params[:city_name]
 
-    @city = City.where("city_name ilike ?", "%#{city_name}%").first
+    @city = City.where('city_name ilike ?', "%#{city_name}%").first
     if city_name.present? && @city
       redirect_to @city
     else
@@ -74,6 +76,7 @@ class CitiesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def city_params
-    params.require(:city).permit(:city_name, :state, :us_city, :population, :one_hundred_pct_by, :co2_emissions_perannum, :wind, :solar, :other_energy_source, :image)
+    params.require(:city).permit(:city_name, :state, :us_city, :population, :one_hundred_pct_by,
+                                 :co2_emissions_perannum, :wind, :solar, :other_energy_source, :image)
   end
 end

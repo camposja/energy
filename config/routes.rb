@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'pages/homepage'
   get 'pages/theme'
@@ -15,20 +17,20 @@ Rails.application.routes.draw do
   root 'pages#homepage'
 
   # Omniauth routes
-  get   '/auth/:provider'          => 'omniauth#auth', as: :auth
-  get   '/auth/:provider/callback' => 'session#create'
-  get   '/auth/failure'            => 'session#failure'
+  get   '/auth/:provider',          to: 'omniauth#auth', as: :auth
+  get   '/auth/:provider/callback', to: 'session#create'
+  get   '/auth/failure',            to: 'session#failure'
 
-  get  '/login'  => 'session#new'
-  post '/login'  => 'session#create'
-  get  '/logout' => 'session#destroy'
+  get  '/login', to: 'session#new'
+  post '/login', to: 'session#create'
+  get  '/logout', to: 'session#destroy'
 
-  post   '/favorites/:cityId'         => 'favorites#create'
-  delete '/favorites/destroy/:cityId' => 'favorites#destroy'
+  post   '/favorites/:cityId',         to: 'favorites#create'
+  delete '/favorites/destroy/:cityId', to: 'favorites#destroy'
 
-  #Mailer route
+  # Mailer route
 
-  mount Shrine::download_endpoint, at: "/attachments"
+  mount Shrine.download_endpoint, at: '/attachments'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
