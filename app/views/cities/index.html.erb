@@ -38,9 +38,9 @@
           <div class="blog-sec">
             <div class="blog-img">
               <% if city.image.present? %>
-                # TODO: troubleshoot shrine to same images correctly
-                # temporary fix
-                <%# image_tag(city.image_url(:medium), class: "img-responsive") %>
+                <%# TODO: troubleshoot shrine to same images correctly %>
+                <%# temporary fix  %>
+                <%= image_tag(city.image_url(:medium), class: "img-responsive") %>
               <% else %>
                 <% image_tag('TownStock.jpg') %>
               <% end %>

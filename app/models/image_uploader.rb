@@ -15,12 +15,10 @@ class ImageUploader < Shrine
     original = io.download
 
     # width, height
-
-    # size_800 orient rotated images
-    size_800 = ImageProcessing::MiniMagick.source(original).resize_and_pad(800, 600, &:auto_orient)
-    size_500 = ImageProcessing::MiniMagick.source(size_800).resize_and_pad(500, 375)
-    size_300 = ImageProcessing::MiniMagick.source(size_500).resize_and_pad(300, 225)
-    size_64  = ImageProcessing::MiniMagick.source(size_300).resize_and_pad(64, 48)
+    size_800 = resize_and_pad(original, 800, 600, &:auto_orient) # orient rotated images
+    size_500 = resize_and_pad(size_800, 500, 375)
+    size_300 = resize_and_pad(size_500, 300, 225)
+    size_64  = resize_and_pad(size_300, 64, 48)
 
     {
       original: io,

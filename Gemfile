@@ -67,11 +67,12 @@ gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
 
 # Image uploading support with Shrine
-gem 'image_processing'
+gem 'down', '~> 2.3.6'
+gem 'image_processing', '~> 0.4.1'
 gem 'mini_magick', '>= 4.3.5'
 gem 'roda'
-gem 'shrine'
-gem 'shrine-sql'
+gem 'shrine', '~> 2.6.1'
+gem 'shrine-sql', '~> 1.1.2'
 
 # Kaminari Pagination
 gem 'kaminari'
