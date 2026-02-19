@@ -3,15 +3,13 @@
 require 'shrine'
 require 'shrine/storage/file_system'
 
-require 'shrine/storage/sql'
-require 'sequel'
-
-DB = Sequel.connect(ActiveRecord::Base.connection_db_config.configuration_hash)
+# File system storage — images are served directly from public/
+# Cache: temporary location during upload
+# Store: permanent location after processing
 Shrine.storages = {
-  cache: Shrine::Storage::Sql.new(database: DB, table: :files),
-  store: Shrine::Storage::Sql.new(database: DB, table: :files)
+  cache: Shrine::Storage::FileSystem.new('public', prefix: 'uploads/cache'),
+  store: Shrine::Storage::FileSystem.new('public', prefix: 'uploads')
 }
-Shrine.plugin :download_endpoint, storages: [:store], prefix: 'attachments'
 
 Shrine.plugin :activerecord
 Shrine.plugin :cached_attachment_data

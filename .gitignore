@@ -19,3 +19,6 @@
 
 # macOS system files
 .DS_Store
+
+# Shrine file uploads (user-generated content, not source code)
+/public/uploads

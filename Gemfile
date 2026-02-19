@@ -60,9 +60,9 @@ gem 'jquery-ui-rails'
 gem 'down', '~> 2.3'
 gem 'image_processing', '~> 0.4.1'
 gem 'mini_magick', '>= 4.9.5'
-gem 'roda'
 gem 'shrine', '~> 2.6'
-gem 'shrine-sql', '~> 1.1'
+# shrine-sql removed: switched to file system storage (Rack 3 compatible, no Sequel needed)
+# roda removed: only needed for shrine's SQL download endpoint
 
 # Kaminari Pagination
 gem 'kaminari'

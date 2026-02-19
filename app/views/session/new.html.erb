@@ -1,19 +1,27 @@
 <body class="j-body">
     <div class="wrapper">
-      <form class="form-signin">
+      <div class="form-signin">
         <h2 class="form-signin-heading">Login to Renewable Energy</h2>
-        <%= link_to auth_path(provider: 'github', redirect_user_url: @redirect_user_url), class: "btn btn-block btn-social btn-github" do %>
+        <%= button_to auth_path(provider: 'github'), method: :post,
+            params: { redirect_user_url: @redirect_user_url },
+            class: "btn btn-block btn-social btn-github" do %>
           <span class="fa fa-github"></span>Sign in with Github
         <% end %>
-        <%= link_to auth_path(provider: 'facebook', redirect_user_url: @redirect_user_url), class: "btn btn-block btn-social btn-facebook" do %>
+        <%= button_to auth_path(provider: 'facebook'), method: :post,
+            params: { redirect_user_url: @redirect_user_url },
+            class: "btn btn-block btn-social btn-facebook" do %>
           <span class="fa fa-facebook"></span>Sign in with Facebook
         <% end %>
-        <%= link_to auth_path(provider: 'twitter', redirect_user_url: @redirect_user_url), class: "btn btn-block btn-social btn-twitter" do %>
+        <%= button_to auth_path(provider: 'twitter'), method: :post,
+            params: { redirect_user_url: @redirect_user_url },
+            class: "btn btn-block btn-social btn-twitter" do %>
           <span class="fa fa-twitter"></span>Sign in with Twitter
         <% end %>
-        <%= link_to auth_path(provider: 'google', redirect_user_url: @redirect_user_url), class: "btn btn-block btn-social btn-google" do %>
+        <%= button_to auth_path(provider: 'google'), method: :post,
+            params: { redirect_user_url: @redirect_user_url },
+            class: "btn btn-block btn-social btn-google" do %>
           <span class="fa fa-google"></span>Sign in with Google
         <% end %>
-      </form>
+      </div>
     </div>
   </body>
