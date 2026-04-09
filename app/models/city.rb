@@ -11,6 +11,6 @@ class City < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   def self.search(search)
-    where('city_name ILIKE ? or state ILIKE ?', "%#{search}%", "%#{search}%")
+    where('LOWER(city_name) LIKE LOWER(?) OR LOWER(state) LIKE LOWER(?)', "%#{search}%", "%#{search}%")
   end
 end

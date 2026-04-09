@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2017_05_26_225531) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "cities", id: :serial, force: :cascade do |t|
+ActiveRecord::Schema[7.2].define(version: 2026_04_09_183345) do
+  create_table "cities", force: :cascade do |t|
     t.string "city_name"
     t.string "state"
     t.string "us_city"
@@ -29,7 +26,7 @@ ActiveRecord::Schema[7.2].define(version: 2017_05_26_225531) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "favorites", id: :serial, force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "city_id"
     t.datetime "created_at", precision: nil, null: false
@@ -38,12 +35,7 @@ ActiveRecord::Schema[7.2].define(version: 2017_05_26_225531) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "files", id: :serial, force: :cascade do |t|
-    t.binary "content"
-    t.text "metadata"
-  end
-
-  create_table "users", id: :serial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "provider"

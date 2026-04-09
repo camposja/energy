@@ -6,7 +6,7 @@ class CitiesController < ApplicationController
   def new_or_create
     city_name = params[:city_name]
 
-    @city = City.where('city_name ilike ?', "%#{city_name}%").first
+    @city = City.where('LOWER(city_name) LIKE LOWER(?)', "%#{city_name}%").first
     if city_name.present? && @city
       redirect_to @city
     else

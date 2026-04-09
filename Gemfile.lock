@@ -102,6 +102,8 @@ GEM
     connection_pool (3.0.2)
     crass (1.0.6)
     date (3.5.1)
+    dockerfile-rails (1.7.10)
+      rails (>= 3.0.0)
     dotenv (3.2.0)
     dotenv-rails (3.2.0)
       dotenv (= 3.2.0)
@@ -244,8 +246,6 @@ GEM
     parser (3.3.10.2)
       ast (~> 2.4.1)
       racc
-    pg (1.6.3-arm64-darwin)
-    pg (1.6.3-x86_64-darwin)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -289,11 +289,6 @@ GEM
     rails-html-sanitizer (1.6.2)
       loofah (~> 2.21)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (7.2.3)
       actionpack (= 7.2.3)
       activesupport (= 7.2.3)
@@ -358,6 +353,8 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86_64-darwin)
     stringio (3.2.0)
     thor (1.5.0)
     tilt (2.7.0)
@@ -384,6 +381,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-darwin-21
 
 DEPENDENCIES
@@ -391,6 +389,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4)
   bootstrap-social-rails
   byebug
+  dockerfile-rails (>= 1.7)
   dotenv-rails
   down (~> 2.3)
   font-awesome-rails
@@ -407,15 +406,14 @@ DEPENDENCIES
   omniauth-linkedin-oauth2 (~> 1.0)
   omniauth-rails_csrf_protection (~> 1.0)
   omniauth-twitter (~> 1.4)
-  pg (~> 1.5)
   puma (~> 6.0)
   rails (~> 7.2)
-  rails_12factor
   rubocop
   sassc-rails
   sendgrid-ruby
   shrine (~> 2.6)
   social-share-button
+  sqlite3 (~> 1.7)
   tzinfo-data
   web-console (>= 4.1.0)
 

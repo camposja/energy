@@ -22,3 +22,7 @@
 
 # Shrine file uploads (user-generated content, not source code)
 /public/uploads
+
+# SQLite database files
+/db/*.sqlite3
+/db/*.sqlite3-*

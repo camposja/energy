@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+# Ensure upload directories exist on the persistent volume
+mkdir -p /data/uploads/cache
+
+# Symlink public/uploads → /data/uploads so Shrine's FileSystem storage
+# writes to persistent disk and Rails' static file server can serve them
+ln -sfn /data/uploads public/uploads
+
+# Run migrations
+bin/rails db:prepare
+
+exec "$@"

@@ -3,9 +3,6 @@
 require 'image_processing/mini_magick'
 
 class ImageUploader < Shrine
-  # plugins and uploading logic
-  include ImageUploader[:image]
-
   include ImageProcessing::MiniMagick
   plugin :processing
   plugin :versions   # enable Shrine to handle a hash of files

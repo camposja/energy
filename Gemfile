@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'pg', '~> 1.5'
+gem 'sqlite3', '~> 1.7'
 gem 'puma', '~> 6.0'
 gem 'rails', '~> 7.2'
 
@@ -70,6 +70,4 @@ gem 'kaminari'
 # Social sharing
 gem 'social-share-button'
 
-group :production do
-  gem 'rails_12factor'
-end
+gem "dockerfile-rails", ">= 1.7", group: :development
